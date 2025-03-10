@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Aktivitas Non Production</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Title Logo -->
+  <link rel="icon" type="images/png" href="images/k3-logo.webp">
+  <!-- Title Logo -->
+
+</head>
+
+<body class="bg-gray-100 p-6">
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
+    <div class="text-center border-b pb-4 mb-4">
+      <h1 class="text-xl font-bold">DETAIL AKTIVITAS NON PRODUCTION DAY</h1>
+      <p class="text-gray-600">PT. Toyota Motor Manufacturing Indonesia</p>
+    </div>
+
+    <!-- Identitas Pekerjaan -->
+    <div class="grid grid-cols-2 gap-4 mb-6">
+      <div>
+        <h2 class="font-bold">IDENTITAS PERKERJAAN :</h2>
+        <label class="block mb-2 mt-2">Nama Proyek</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">Lokasi Proyek</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">Hari/Tgl Pekerjaan</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">Jam Pelaksanaan:</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">Pelaksana</label>
+        <input type="text" class="w-full border rounded p-2">
+      </div>
+      <!-- TMMIN USER -->
+      <div>
+        <h2 class="font-bold">TMMIN USER :</h2>
+        <label class="block mb-2 mt-2">Nama</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">No Reg</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">A/L No</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">No Hp</label>
+        <input type="text" class="w-full border rounded p-2">
+      </div>
+      <!-- SUPERVISOR -->
+      <div>
+        <h2 class="font-bold">SUPERVISOR :</h2>
+        <label class="block mb-2 mt-2">Nama</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">No Reg</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">A/L No</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">No Hp</label>
+        <input type="text" class="w-full border rounded p-2">
+      </div>
+      <!-- PENGAWAS -->
+      <div>
+        <h2 class="font-bold">PENGAWAS :</h2>
+        <label class="block mb-2 mt-2">Nama</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">No Reg</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">A/L No</label>
+        <input type="text" class="w-full border rounded p-2 mb-4">
+
+        <label class="block mb-2">No Hp</label>
+        <input type="text" class="w-full border rounded p-2">
+      </div>
+    </div>
+
+    <!-- Peralatan Kerja -->
+    <div class="mb-6">
+      <h2 class="font-bold border-b pb-2 mb-4">PERALATAN KERJA :</h2>
+      <ul class="w-full">
+        <li><input type="text" placeholder="contoh : kunci L, Palu, Kunci PAS" class="w-full border rounded p-2"></li>
+      </ul>
+    </div>
+
+    <!-- Utility Item Request -->
+    <div class="mb-6">
+      <h2 class="font-bold border-b pb-2 mb-4">Utility Item Request</h2>
+      <ul>
+        <li><input type="text" placeholder="contoh : Listrik, Angin" class="w-full border rounded p-2"></li>
+      </ul>
+    </div>
+
+    <!-- APD -->
+    <div class="mb-6">
+      <h2 class="font-bold border-b pb-2 mb-4">APD</h2>
+      <ul class="grid grid-cols-2 gap-2">
+        <li><input type="checkbox" class="mr-2"> Helmet</li>
+        <li><input type="checkbox" class="mr-2"> Kaca Mata</li>
+        <li><input type="checkbox" class="mr-2"> Masker</li>
+        <li><input type="checkbox" class="mr-2"> Arm Protector</li>
+        <li><input type="checkbox" class="mr-2"> Sarung Tangan</li>
+        <li><input type="checkbox" class="mr-2"> Safety Fence (Rompi)</li>
+      </ul>
+    </div>
+
+    <!-- Work Instruction & Denwacho -->
+    <div class="mt-6">
+      <h2 class="font-bold border-b pb-2 mb-4">WORK INSTRUCTION & DENWACHO</h2>
+      <table class="table-auto w-full border-collapse border border-gray-400" id="workTable">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-400 px-3 py-2">No</th>
+            <th class="border border-gray-400 px-3 py-2">Pekerjaan Hari Ini</th>
+            <th class="border border-gray-400 px-3 py-2">PIC</th>
+            <th class="border border-gray-400 px-3 py-2">Jam Pelaksanaan</th>
+            <th class="border border-gray-400 px-3 py-2">Potensi Bahaya (STOP 6)</th>
+            <th class="border border-gray-400 px-3 py-2">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-400 px-2 py-1 text-center">1</td>
+            <td class="border border-gray-400 px-2 py-1"><input type="text" class="w-full"></td>
+            <td class="border border-gray-400 px-2 py-1"><input type="text" class="w-full"></td>
+            <td class="border border-gray-400 px-2 py-1"><input type="text" class="w-full"></td>
+            <td class="border border-gray-400 px-2 py-1">
+              <select class="w-full border rounded p-2">
+                <option value="jatuh">A</option>
+                <option value="terbentur">B</option>
+                <option value="terjepit">C</option>
+                <option value="tersengat">D</option>
+                <option value="terpapar">E</option>
+                <option value="terpapar">F</option>
+              </select>
+            </td>
+            <td class="border border-gray-400 px-2 py-1 text-center">
+              <button onclick="removeRow(this)" class="text-white bg-red-500 px-2 py-1 rounded">Hapus</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button onclick="addRow()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Tambah
+        Baris</button>
+    </div>
+
+    <script>
+      function addRow() {
+        const table = document.getElementById("workTable").getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+        newRow.innerHTML = `<td class='border border-gray-400 px-2 py-1 text-center'>${table.rows.length}</td>
+                            <td class='border border-gray-400 px-2 py-1'><input type='text' class='w-full'></td>
+                            <td class='border border-gray-400 px-2 py-1'><input type='text' class='w-full'></td>
+                            <td class='border border-gray-400 px-2 py-1'><input type='text' class='w-full'></td>
+                            <td class='border border-gray-400 px-2 py-1'>
+                              <select class='w-full border rounded p-2'>
+                                <option value='jatuh'>A</option>
+                                <option value='terbentur'>B</option>
+                                <option value='terjepit'>C</option>
+                                <option value='tersengat'>D</option>
+                                <option value='terpapar'>E</option>
+                                <option value='terpapar'>F</option>
+                              </select>
+                            </td>
+                            <td class='border border-gray-400 px-2 py-1 text-center'>
+                              <button onclick='removeRow(this)' class='text-white bg-red-500 px-2 py-1 rounded'>Hapus</button>
+                            </td>`;
+      }
+
+      function removeRow(button) {
+        button.closest("tr").remove();
+      }
+    </script>
+
+    <!-- Work Instruction & Denwacho -->
+
+    <!-- Work Procedure & KY 3R -->
+    <div class="mt-20">
+      <h2 class="text-xl font-bold border-b pb-2 mb-4">WORK PROCEDURE & KY 3R</h2>
+
+      <table class="w-full border-collapse border border-gray-400 mb-4">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-400 px-3 py-2">No</th>
+            <th class="border border-gray-400 px-3 py-2">Prosedur Kerja</th>
+            <th class="border border-gray-400 px-3 py-2">Point Penting</th>
+            <th class="border border-gray-400 px-3 py-2">Upload Gambar</th>
+          </tr>
+        </thead>
+        <tbody id="procedureTable">
+          <tr>
+            <td class="border border-gray-400 px-2 py-1 text-center">1</td>
+            <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Prosedur Kerja"
+                class="w-full p-1"></td>
+            <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Point Penting"
+                class="w-full p-1"></td>
+            <td class="border border-gray-400 px-2 py-1 text-center">
+              <input type="file" accept="image/*" onchange="previewImage(event, this)" class="w-full">
+              <div class="imagePreview mt-2"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script>
+        function previewImage(event, input) {
+          let imagePreview = input.nextElementSibling;
+          imagePreview.innerHTML = ''; // Kosongkan preview sebelumnya
+          let file = event.target.files[0];
+
+          if (file) {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+              let img = document.createElement('img');
+              img.src = e.target.result;
+              img.classList.add('w-32', 'h-auto', 'border', 'border-gray-400', 'rounded', 'shadow');
+              imagePreview.appendChild(img);
+            }
+            reader.readAsDataURL(file);
+          }
+        }
+
+        function addProcedureRow() {
+          let table = document.getElementById("procedureTable");
+          let rowNumber = table.rows.length + 1; // Nomor otomatis
+          let row = document.createElement("tr");
+
+          row.innerHTML = `
+        <td class="border border-gray-400 px-2 py-1 text-center">${rowNumber}</td>
+        <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Prosedur Kerja" class="w-full p-1"></td>
+        <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Point Penting" class="w-full p-1"></td>
+        <td class="border border-gray-400 px-2 py-1 text-center">
+          <input type="file" accept="image/*" onchange="previewImage(event, this)" class="w-full">
+          <div class="imagePreview mt-2"></div>
+        </td>
+      `;
+          table.appendChild(row);
+        }
+      </script>
+
+      <button onclick="addProcedureRow()" class="bg-green-600 text-white px-3 py-2 rounded">Tambah Baris</button>
+    </div>
+
+
+    <h3 class="text-lg font-bold mt-20">SITUASI BERBAHAYA</h3>
+    <table class="w-full border-collapse border border-gray-400">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border border-gray-400 px-3 py-2">No</th>
+          <th class="border border-gray-400 px-3 py-2">Situasi Berbahaya</th>
+          <th class="border border-gray-400 px-3 py-2">STOP 6</th>
+          <th class="border border-gray-400 px-3 py-2">RANK</th>
+          <th class="border border-gray-400 px-3 py-2">Penanggulangan</th>
+          <th class="border border-gray-400 px-3 py-2">Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="dangerTable">
+        <tr>
+          <td class="border border-gray-400 px-2 py-1 text-center">1</td>
+          <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Situasi Berbahaya"
+              class="w-full p-1"></td>
+          <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="STOP 6" class="w-full p-1">
+          </td>
+          <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="RANK" class="w-full p-1"></td>
+          <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Penanggulangan"
+              class="w-full p-1"></td>
+          <td class="border border-gray-400 px-2 py-1 text-center"><button onclick="removeRow(this)"
+              class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="addDangerRow()" class="bg-green-600 text-white px-3 py-2 mt-10 rounded-lg">Tambah Baris</button>
+
+    <footer class="text-center mt-10">
+      <h3>Pastikan Kondisi Kerja Aman & Selalu Pakai SPD Standard</h3>
+    </footer>
+  </div>
+
+  <script>
+    function addProcedureRow() {
+      let table = document.getElementById('procedureTable');
+      let row = table.insertRow();
+      row.innerHTML = `
+              <td class="border border-gray-400 px-2 py-1 text-center">${table.rows.length}</td>
+              <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Prosedur Kerja" class="w-full p-1"></td>
+              <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Point Penting" class="w-full p-1"></td>
+              <td class="border border-gray-400 px-2 py-1 text-center"><button onclick="removeRow(this)" class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button></td>
+          `;
+    }
+
+    function addDangerRow() {
+      let table = document.getElementById('dangerTable');
+      let row = table.insertRow();
+      row.innerHTML = `
+              <td class="border border-gray-400 px-2 py-1 text-center">${table.rows.length}</td>
+              <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Situasi Berbahaya" class="w-full p-1"></td>
+              <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="STOP 6" class="w-full p-1"></td>
+              <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="RANK" class="w-full p-1"></td>
+              <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Penanggulangan" class="w-full p-1"></td>
+              <td class="border border-gray-400 px-2 py-1 text-center"><button onclick="removeRow(this)" class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button></td>
+          `;
+    }
+
+    function removeRow(button) {
+      let row = button.parentElement.parentElement;
+      row.parentElement.removeChild(row);
+    }
+  </script>
+
+  <!-- Work Procedure & KY 3R -->
+
+  <!-- Submit Button -->
+  <div class="text-center mt-8 space-x-4 py-4 px-6 flex justify-center items-center">
+    <!-- Tombol Kembali -->
+    <a href="form-surat-bahaya.html"
+      class="bg-blue-500 text-white py-2 px-6 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">
+      Kembali
+    </a>
+    <!-- Tombol Submit -->
+    <button class="bg-green-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-green-700">
+      Submit
+    </button>
+  </div>
+
+  </div>
+
+
+</body>
+
+</html>

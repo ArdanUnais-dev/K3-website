@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K3 | SIK | Website</title>
+
+  <!-- link Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- link Tailwind CSS -->
+
+  <!-- link CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- link CSS -->
+
+  <!-- Javascript -->
+  <script src="javascript.js"></script>
+  <!-- Javascript -->
+
+  <!-- Title Logo -->
+  <link rel="icon" type="images/png" href="images/k3-logo.webp">
+  <!-- Title Logo -->
+</head>
+
+<!-- Body -->
+
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-gray-100 py-4 shadow-md">
+    <div class="container mx-auto px-6 md:px-12 flex items-center justify-between">
+
+      <!-- Logo Header -->
+      <div class="flex items-center">
+        <a href="#home"><img src="assets/logo-k3.png" alt="Toyota Logo" class="w-20"></a>
+      </div>
+      <!-- Logo Header -->
+
+      <!-- Hamburger Button -->
+      <button id="menu-btn" class="block md:hidden focus:outline-none">
+        <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <!-- Hamburger Button -->
+
+      <!-- Navigation -->
+      <nav id="menu"
+        class="hidden md:flex flex-col md:flex-row justify-center md:space-x-8 items-center flex-grow relative md:static bg-green-100 rounded-lg md:bg-transparent p-4 md:p-0 absolute inset-x-0 top-0 md:top-auto shadow-md md:shadow-none z-10">
+
+        <!-- Close Button -->
+        <button id="close-btn" class="ml-auto mb-4 block md:hidden focus:outline-none">
+          <svg class="w-8 h-8 text-green-600 bg-gray-100 rounded-full" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <!-- Close Button -->
+
+        <!-- Links -->
+        <a href="#home"
+          class="group text-green-600 hover:text-green-700 transition duration-300 transform font-semibold text-lg relative">
+          Home
+          <span
+            class="block h-1 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+        </a>
+
+        <a href="#about"
+          class="group text-green-600 hover:text-green-700 transition duration-300 transform font-semibold text-lg relative">
+          About Us
+          <span
+            class="block h-1 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+        </a>
+
+        <a href="#menu-toyota"
+          class="group text-green-600 hover:text-green-700 transition duration-300 transform font-semibold text-lg relative">
+          Menu Toyota
+          <span
+            class="block h-1 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+        </a>
+
+        <a href="#faq"
+          class="group text-green-600 hover:text-green-700 transition duration-300 transform font-semibold text-lg relative">
+          Faq
+          <span
+            class="block h-1 bg-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+        </a>
+
+        <!-- Buttons for Mobile -->
+        <div class="flex flex-col md:hidden mt-4 space-y-2 w-full">
+          <a href="login.html"
+            class="bg-green-600 text-white py-2 px-6 rounded-full hover:bg-green-700 transition duration-300 transform hover:scale-105 font-semibold shadow-xl text-center">Login</a>
+          <a href="register.html"
+            class="bg-green-600 text-white py-2 px-6 rounded-full hover:bg-green-700 transition duration-300 transform hover:scale-105 font-semibold shadow-xl text-center">Register</a>
+        </div>
+      </nav>
+
+      <!-- Buttons for Desktop -->
+      <div class="hidden md:flex space-x-4 items-center">
+        <a href="login.html"
+          class="bg-green-600 text-white py-2 px-6 rounded-full hover:bg-green-700 transition duration-300 transform hover:scale-105 font-semibold shadow-xl">Login</a>
+        <a href="register.html"
+          class="bg-green-600 text-white py-2 px-6 rounded-full hover:bg-green-700 transition duration-300 transform hover:scale-105 font-semibold shadow-xl">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- JavaScript -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const menu = document.getElementById('menu');
+    const menuLinks = document.querySelectorAll('#menu a'); // Seleksi semua link dalam menu
+
+    // Show menu and hide hamburger button
+    menuBtn.addEventListener('click', () => {
+      menu.classList.remove('hidden'); // Show menu
+      menuBtn.classList.add('hidden'); // Hide hamburger button
+    });
+
+    // Hide menu and show hamburger button
+    closeBtn.addEventListener('click', () => {
+      menu.classList.add('hidden'); // Hide menu
+      menuBtn.classList.remove('hidden'); // Show hamburger button
+    });
+
+    // Close menu when a link is clicked
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden'); // Hide menu
+        menuBtn.classList.remove('hidden'); // Show hamburger button
+      });
+    });
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <!-- Header -->
+
+
+
+  <!-- Hero Section -->
+  <section id="home" class="h-screen bg-gradient-to-r from-gray-200 to-gray-300 flex items-center">
+    <div class="container mx-auto px-6 md:px-12 lg:px-15 flex flex-col-reverse md:flex-row items-center">
+      <!-- Left Content -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 leading-tight mb-6">
+          Welcome To SIK <span class="text-green-600">Online Website</span>
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">
+          K3 (Keselamatan dan Kesehatan Kerja) adalah upaya untuk melindungi keselamatan dan kesehatan tenaga kerja di
+          tempat kerja. K3 juga dapat diartikan sebagai ilmu pengetahuan dan penerapannya dalam mencegah kecelakaan
+          kerja.
+        </p>
+        <div class="animate-bounce mt-20">
+          <a href="#about"
+            class="bg-gradient-to-r from-green-500 to-green-700 text-white py-3 px-8 rounded-full text-lg font-semibold shadow-lg transition transform hover:scale-105 hover:shadow-2xl hover:from-green-600 hover:to-green-800 hover:brightness-110 focus:ring-4 focus:ring-green-500 focus:outline-none focus:ring-offset-2 focus:ring-offset-gray-100 active:scale-95">
+            Get Started
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Right Image Slideshow -->
+      <div class="w-full md:w-1/2 relative bg-gray-120">
+        <div class="relative overflow-hidden rounded-lg">
+          <img id="slideshow-image" src="assets/background-hero.jpeg" alt="Hero Image"
+            class="rounded-lg w-full transition-opacity duration-1000">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section -->
+
+  <!-- Javascript Hero Section -->
+  <style>
+    /* Tambahkan animasi muncul dari atas */
+    @keyframes slideInFromTop {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Gaya gambar dengan animasi */
+    .slideshow-image {
+      animation: slideInFromTop 0.8s ease-in-out;
+    }
+  </style>
+
+  <script>
+    const images = [
+      "assets/background-hero.jpeg",
+      "assets/contoh-1.jpg",
+      "assets/contoh-2.webp"
+    ];
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById("slideshow-image");
+
+    // Animasi pertama kali saat halaman di-refresh
+    window.addEventListener("load", () => {
+      slideshowImage.classList.add("slideshow-image");
+    });
+
+    // Ganti gambar secara otomatis
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      slideshowImage.classList.remove("slideshow-image"); // Hapus kelas animasi
+      void slideshowImage.offsetWidth; // Trigger reflow untuk memulai animasi ulang
+      slideshowImage.src = images[currentIndex]; // Ganti sumber gambar
+      slideshowImage.classList.add("slideshow-image"); // Tambahkan kelas animasi
+    }, 3000); // Ganti gambar setiap 3 detik
+  </script>
+  <!-- Javascript Hero Section -->
+
+  <!-- Section About -->
+  <section id="about" class="bg-gray-50 py-16">
+    <div class="container mx-auto px-6 md:px-12 lg:px-20 mt-20">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-green-600 mb-4">Tentang Kami</h2>
+        <p class="text-gray-700 leading-relaxed text-lg">
+          segala kegiatan untuk menjamin dan melindungi keselamatan dan kesehatan tenaga kerja melalui upaya pencegahan
+          kecelakaan kerja dan penyakit akibat kerja.
+        </p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div
+          class="bg-white shadow-md rounded-lg p-6 text-center transition duration-300 transform hover:scale-105 hover:shadow-xl">
+          <div class="mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12 text-green-500 mx-auto hover:text-green-700 transition duration-300" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8 9a1 1 0 012-2v4a1 1 0 01-2-2zm2 7a1 1 0 110-2 1 1 0 010 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2 hover:text-green-600 transition duration-300">Edukasi
+            Kesehatan</h3>
+          <p class="text-gray-600">Kami menyediakan informasi kesehatan terbaru untuk mendukung gaya hidup sehat Anda.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white shadow-md rounded-lg p-6 text-center transition duration-300 transform hover:scale-105 hover:shadow-xl">
+          <div class="mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12 text-green-500 mx-auto hover:text-green-700 transition duration-300" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3-9a3 3 0 11-6 0 3 3 0 016 0z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2 hover:text-green-600 transition duration-300">Layanan
+            Profesional</h3>
+          <p class="text-gray-600">Tim profesional kami selalu siap memberikan layanan terbaik untuk Anda.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white shadow-md rounded-lg p-6 text-center transition duration-300 transform hover:scale-105 hover:shadow-xl">
+          <div class="mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-12 w-12 text-green-500 mx-auto hover:text-green-700 transition duration-300" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path d="M8 9a3 3 0 106 0 3 3 0 00-6 0z" />
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-4-5a6 6 0 1112 0H6z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-2 hover:text-green-600 transition duration-300">Komunitas
+            Sehat</h3>
+          <p class="text-gray-600">Bergabunglah dengan komunitas kami untuk berbagi inspirasi dan dukungan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section About -->
+
+  <!-- Section Menu + Responsive Section Menu -->
+  <section id="menu-toyota" class="bg-gradient-to-b from-gray-100 to-gray-300 py-16 flex items-center justify-center">
+    <div class="text-center px-4">
+      <h2 class="text-3xl font-bold text-green-600 mb-6">Pilih Menu Anda</h2>
+      <div class="mt-10 flex flex-col gap-6 md:flex-row md:gap-6">
+
+        <!-- Menu 1 -->
+        <a href="standar-safety.html"
+          class="bg-green-600 text-white py-3 px-8 rounded-full hover:bg-green-700 transition duration-300 transform hover:scale-105 font-semibold shadow-lg">
+          Standar Safety <span class="text-gray-100 text-xs">( Informasi, Ergo, Electric )</span>
+        </a>
+        <!-- Menu 2 -->
+        <a href="login-sik.html"
+          class="bg-green-600 text-white py-3 px-8 rounded-full hover:bg-green-700 transition duration-300 transform hover:scale-105 font-semibold shadow-lg">
+          Form Sistem Informasi Kesehatan <span class="text-gray-100 text-xs"></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section Question -->
+  <section id="faq" class="bg-gray-100 py-16">
+    <div class="container mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold text-green-600">Pertanyaan yang Sering Diajukan</h2>
+        <p class="text-gray-700 leading-relaxed text-lg">
+          Temukan jawaban untuk pertanyaan Anda di sini.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Question 1 -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <button
+            class="w-full text-left text-lg font-semibold text-green-600 focus:outline-none flex justify-between items-center toggle-button"
+            data-toggle="faq1">
+            Apa itu layanan SIK?
+            <span class="toggle-icon">+</span>
+          </button>
+          <div id="faq1" class="faq-content hidden mt-2 text-gray-700 transition-all duration-500">
+            SIK adalah layanan online yang menyediakan informasi dan layanan kesehatan terbaik untuk Anda.
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <button
+            class="w-full text-left text-lg font-semibold text-green-600 focus:outline-none flex justify-between items-center toggle-button"
+            data-toggle="faq2">
+            Bagaimana cara mendaftar?
+            <span class="toggle-icon">+</span>
+          </button>
+          <div id="faq2" class="faq-content hidden mt-2 text-gray-700 transition-all duration-500">
+            Anda dapat mendaftar melalui halaman <a href="register.html"
+              class="text-green-600 underline">pendaftaran</a> dengan mengisi formulir yang tersedia.
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <button
+            class="w-full text-left text-lg font-semibold text-green-600 focus:outline-none flex justify-between items-center toggle-button"
+            data-toggle="faq3">
+            Apakah layanan ini gratis?
+            <span class="toggle-icon">+</span>
+          </button>
+          <div id="faq3" class="faq-content hidden mt-2 text-gray-700 transition-all duration-500">
+            Ya, sebagian besar layanan kami gratis. Namun, beberapa layanan premium memerlukan biaya tambahan.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section Question -->
+
+  <!-- Javascript Section Question -->
+  <script>
+    document.querySelectorAll(".toggle-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetId = button.getAttribute("data-toggle");
+        const content = document.getElementById(targetId);
+        const icon = button.querySelector(".toggle-icon");
+
+        if (content.classList.contains("hidden")) {
+          // Open FAQ
+          content.classList.remove("hidden");
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.textContent = "-"; // Change icon to minus
+        } else {
+          // Close FAQ
+          content.style.maxHeight = "0";
+          setTimeout(() => content.classList.add("hidden"), 500); // Wait for animation to complete
+          icon.textContent = "+"; // Change icon to plus
+        }
+      });
+    });
+  </script>
+  <!-- Section Question -->
+
+  <!-- Footer -->
+
+  <footer class="bg-gray-900 text-white py-10 relative">
+    <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-6 md:mb-0 text-center md:text-left">
+        <h2 class="text-2xl font-bold">K3 Safety</h2>
+        <p class="text-gray-300 mt-2">Keselamatan dan Kesehatan Kerja adalah Prioritas Utama.</p>
+      </div>
+      <div class="flex space-x-6">
+        <a href="#home" class="text-gray-300 hover:text-green-500 font-semibold transition duration-300">Home</a>
+        <a href="#about" class="text-gray-300 hover:text-green-500 font-semibold transition duration-300">About Us</a>
+        <a href="#menu-toyota" class="text-gray-300 hover:text-green-500 font-semibold transition duration-300">Menu</a>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-gray-500 pt-4 text-center text-gray-300 text-sm">
+      &copy; 2025 K3 Safety. Keselamatan Kerja adalah Hak Semua Pekerja.
+    </div>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTop"
+      class="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow -lg hover:bg-green-700 transform hover:scale-110 transition duration-300 focus:outline-none hidden">
+      ↑
+    </button>
+  </footer>
+
+  <script>
+    // Scroll to top functionality
+    const scrollToTopBtn = document.getElementById("scrollToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove("hidden");
+      } else {
+        scrollToTopBtn.classList.add("hidden");
+      }
+    });
+
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+  <!-- Footer -->
+</body>
+<!-- Body -->
+
+</html>

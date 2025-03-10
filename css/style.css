@@ -1,0 +1,39 @@
+/* Animasi untuk menu */
+[x-cloak] {
+    display: none;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+[data-toggle]:focus + .toggle-icon {
+    transform: rotate(45deg);
+}
+
+/* Tambahkan transisi untuk animasi buka/tutup */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out;
+}
+
+.faq-content.open {
+    max-height: 200px; /* Sesuaikan dengan konten maksimal */
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+[data-toggle]:focus + .toggle-icon {
+    transform: rotate(45deg);
+}
+
+#menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+
+
+

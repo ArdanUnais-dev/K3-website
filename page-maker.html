@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Maker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-out {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-green-100 to-green-300 flex items-center justify-center min-h-screen p-6">
+    <div id="form-container" class="bg-white p-10 rounded-xl shadow-lg w-full max-w-2xl overflow-auto">
+        <h2 class="text-2xl font-bold mb-6 text-center text-gray-700 flex items-center justify-center gap-2">
+            Identitas Maker
+        </h2>
+
+        <form>
+            <div class="mb-4">
+                <label for="nama_maker" class="block text-sm font-medium text-gray-700">Nama Maker</label>
+                <input type="text" id="nama_maker"
+                    class="mt-2 p-3 w-full border rounded-lg focus:ring focus:ring-green-300 shadow-lg">
+            </div>
+
+            <div class="mb-4">
+                <label for="jumlah_member" class="block text-sm font-medium text-gray-700">Jumlah Member</label>
+                <input type="number" id="jumlah_member"
+                    class="mt-2 p-3 w-full border rounded-lg focus:ring focus:ring-green-300 shadow-lg">
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-700">Nama AL & Nomer AL</label>
+                <div id="nama_al_container" class="mt-2 space-y-2">
+                    <div class="flex gap-2 items-center">
+                        <input type="text" placeholder="Nama AL"
+                            class="p-3 w-full border rounded-lg focus:ring focus:ring-green-300 shadow-lg">
+                        <input type="text" placeholder="Nomer AL"
+                            class="p-3 w-full border rounded-lg focus:ring focus:ring-green-300 shadow-lg">
+                        <button type="button" onclick="hapusKolom(this)"
+                            class="bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 transition-all shadow-md">Hapus</button>
+                    </div>
+                </div>
+                <button type="button" onclick="tambahKolom()"
+                    class="mt-4 bg-green-400 text-white py-2 rounded-lg hover:bg-green-500 transition-all duration-300 shadow-md font-semibold px-4">
+                    Tambah Kolom
+                </button>
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <button type="button" onclick="goToPage('../sertifikat-maker/sertifikat-al.html')"
+                        class="bg-gradient-to-r from-blue-400 to-blue-700 text-white py-2 rounded-md transition-all shadow-md border border-blue-700 transform hover:scale-105 hover:shadow-lg active:scale-95">
+                        Sertifikat AL
+                    </button>
+                    <button type="button" onclick="goToPage('../sertifikat-maker/sertifikat-idmamber.html')"
+                        class="bg-gradient-to-r from-blue-400 to-blue-700 text-white py-2 rounded-md transition-all shadow-md border border-blue-700 transform hover:scale-105 hover:shadow-lg active:scale-95">
+                        Sertifikat Id Mamber
+                    </button>
+                    <button type="button" onclick="goToPage('../sertifikat-maker/sertifikat-hpw.html')"
+                        class="bg-gradient-to-r from-blue-400 to-blue-700 text-white py-2 rounded-md transition-all shadow-md border border-blue-700 transform hover:scale-105 hover:shadow-lg active:scale-95">
+                        Sertifikat HPW
+                    </button>
+                    <button type="button" onclick="goToPage('../sertifikat-maker/sertifikat-kesehatan.html')"
+                        class="bg-gradient-to-r from-blue-400 to-blue-700 text-white py-2 rounded-md transition-all shadow-md border border-blue-700 transform hover:scale-105 hover:shadow-lg active:scale-95">
+                        Sertifikat Kesehatan
+                    </button>
+                </div>
+                              
+            </div>
+
+            <div class="flex justify-between gap-4">
+                <button type="button" onclick="goBack()"
+                    class="w-1/2 bg-red-400 text-white py-3 rounded-lg hover:bg-red-500 transition-all duration-300 shadow-md font-semibold">
+                    Kembali
+                </button>
+                <button type="button" onclick="nextPage()"
+                    class="w-1/2 bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md font-semibold">
+                    Next
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function tambahKolom() {
+            const container = document.getElementById('nama_al_container');
+            const div = document.createElement('div');
+            div.className = "flex gap-2 items-center mt-2";
+
+            const inputNama = document.createElement('input');
+            inputNama.type = 'text';
+            inputNama.placeholder = 'Nama AL';
+            inputNama.className = 'p-3 w-full border rounded-lg focus:ring focus:ring-green-300 shadow-sm';
+
+            const inputNomer = document.createElement('input');
+            inputNomer.type = 'text';
+            inputNomer.placeholder = 'Nomer AL';
+            inputNomer.className = 'p-3 w-full border rounded-lg focus:ring focus:ring-green-300 shadow-sm';
+
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 transition-all shadow-md';
+            button.innerText = 'Hapus';
+            button.onclick = function () { hapusKolom(button); };
+
+            div.appendChild(inputNama);
+            div.appendChild(inputNomer);
+            div.appendChild(button);
+            container.appendChild(div);
+        }
+
+        function hapusKolom(button) {
+            const container = document.getElementById('nama_al_container');
+            if (container.children.length > 1) {
+                button.parentElement.remove();
+            }
+        }
+
+        function nextPage() {
+            const formContainer = document.getElementById('form-container');
+            formContainer.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = 'form-surat-bahaya.html';
+            }, 500);
+        }
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        function goToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+</html>

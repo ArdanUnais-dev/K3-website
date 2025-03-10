@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Izin Pekerjaan Berbahaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Title Logo -->
+    <link rel="icon" type="images/png" href="images/k3-logo.webp">
+    <!-- Title Logo -->
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-5xl mx-auto bg-white p-8 shadow-md rounded-lg">
+        <h1 class="text-2xl font-bold mb-6 text-green-700 text-center bg-gray-100 py-4 px-6 rounded-full shadow-lg">Form
+            Izin Melakukan Pekerjaan Berbahaya</h1>
+
+        <!-- Section A: Identitas Proyek -->
+        <section class="mb-6">
+            <h2 class="text-lg font-semibold mb-4">A. Identitas Proyek</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="nama-proyek" class="block text-gray-700 font-medium">NAMA PROYEK</label>
+                    <input type="text" id="nama-proyek" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="lokasi-proyek" class="block text-gray-700 font-medium">LOKASI PROYEK</label>
+                    <input type="text" id="lokasi-proyek" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="status-kerja" class="block text-gray-700 font-medium">STATUS KERJA</label>
+                    <select id="status-kerja" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <option>Baru</option>
+                        <option>Perpanjangan</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="tgl-pelaksanaan" class="block text-gray-700 font-medium">TANGGAL PELAKSANAAN</label>
+                    <input type="date" id="tgl-pelaksanaan" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="lokasi-proyek" class="block text-gray-700 font-medium">DIVISI / DAPARTEMEN</label>
+                    <input type="text" id="lokasi-proyek" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="lokasi-proyek" class="block text-gray-700 font-medium">JAM PELAKSANAAN</label>
+                    <input type="text" id="lokasi-proyek" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B: Pelaksana Proyek -->
+        <section class="mb-6">
+            <h2 class="text-lg font-semibold mb-4">B. Pelaksana Proyek</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="pimpinan" class="block text-gray-700 font-medium">NAMA PIMPINAN</label>
+                    <input type="text" id="pimpinan" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="pimpinan" class="block text-gray-700 font-medium">NAMA PENGAWAS</label>
+                    <input type="text" id="pimpinan" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="pengawas" class="block text-gray-700 font-medium">PARAF PEMIMPIN</label>
+                    <input type="text" id="pengawas" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="pimpinan" class="block text-gray-700 font-medium">PARAF PENGAWAS</label>
+                    <input type="text" id="pimpinan" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="pimpinan" class="block text-gray-700 font-medium">NO A/L PIMPINAN</label>
+                    <input type="text" id="pimpinan" class="w-50 px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="pimpinan" class="block text-gray-700 font-medium">NO A/L PENGAWAS</label>
+                    <input type="text" id="pimpinan" class="w-50 px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="pimpinan" class="block text-gray-700 font-medium">NO HP :</label>
+                    <input type="text" id="pimpinan" class="w-60 px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="pimpinan" class="block text-gray-700 font-medium">NO HP :</label>
+                    <input type="text" id="pimpinan" class="w-60 px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section C: Jenis Pekerjaan -->
+        <section class="mb-6">
+            <h2 class="text-lg font-semibold mb-4">C. Jenis Pekerjaan yang Akan Dilaksanakan</h2>
+            <div>
+                <table class="table-auto w-full border border-gray-300" id="jobTable">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border px-4 py-2">Pekerjaan</th>
+                            <th class="border px-4 py-2">Tingkat Bahaya</th>
+                            <th class="border px-4 py-2">Tanggal</th>
+                            <th class="border px-4 py-2">STOP-6 Category</th>
+                            <th class="border px-4 py-2">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2"><input type="text" class="w-full" placeholder="Nama Pekerjaan">
+                            </td>
+                            <td class="border px-4 py-2">
+                                <select class="w-full">
+                                    <option>Tinggi</option>
+                                    <option>Sedang</option>
+                                    <option>Rendah</option>
+                                </select>
+                            </td>
+                            <td class="border px-4 py-2"><input type="date" class="w-full"></td>
+                            <td class="border px-4 py-2">
+                                <select class="w-full">
+                                    <option value="option1">A</option>
+                                    <option value="option2">B</option>
+                                    <option value="option3">C</option>
+                                    <option value="option3">D</option>
+                                    <option value="option3">E</option>
+                                    <option value="option3">F</option>
+                                    <option value="option3">Alfa </option>
+                                </select>
+                            </td> <!-- Kolom Menu -->
+                            <td class="border px-4 py-2 text-center">
+                                <button class="delete-btn bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="addRowBtn" class="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Tambah
+                    Pekerjaan</button>
+            </div>
+        </section>
+
+        <script>
+            document.getElementById("addRowBtn").addEventListener("click", function () {
+                let table = document.getElementById("jobTable").getElementsByTagName('tbody')[0];
+                let newRow = document.createElement("tr");
+
+                newRow.innerHTML = `
+            <td class="border px-4 py-2"><input type="text" class="w-full" placeholder="Nama Pekerjaan"></td>
+            <td class="border px-4 py-2">
+                <select class="w-full">
+                    <option>Tinggi</option>
+                    <option>Sedang</option>
+                    <option>Rendah</option>
+                </select>
+            </td>
+            <td class="border px-4 py-2"><input type="date" class="w-full"></td>
+            <td class="border px-4 py-2">
+                <select class="w-full">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </td> <!-- Kolom Menu -->
+            <td class="border px-4 py-2 text-center">
+                <button class="delete-btn bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+            </td>
+        `;
+
+                table.appendChild(newRow);
+            });
+
+            // Menggunakan event delegation untuk menghapus baris
+            document.getElementById("jobTable").addEventListener("click", function (event) {
+                if (event.target.classList.contains("delete-btn")) {
+                    let row = event.target.closest("tr");
+                    row.remove();
+                }
+            });
+        </script>
+        <!-- Section C: Jenis Pekerjaan -->
+
+
+        <!-- Section D: Identifikasi Bahaya -->
+        <section class="mb-6">
+            <h2 class="text-lg font-semibold mb-4">D. Hasil Identifikasi Awal Sebelum Pekerjaan Dimulai</h2>
+            <div>
+                <table class="table-auto w-full border border-gray-300" id="hazardTable">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border px-4 py-2">Identifikasi Potensi Bahaya</th>
+                            <th class="border px-4 py-2">Tindakan Pencegahan</th>
+                            <th class="border px-4 py-2">PIC</th>
+                            <th class="border px-4 py-2">Keterangan</th>
+                            <th class="border px-4 py-2">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2"><input type="text" class="w-full"></td>
+                            <td class="border px-4 py-2"><input type="text" class="w-full"></td>
+                            <td class="border px-4 py-2"><input type="text" class="w-full"></td>
+                            <td class="border px-4 py-2"><input type="text" class="w-full"></td>
+                            <td class="border px-4 py-2 text-center">
+                                <button onclick="removeRow(this)"
+                                    class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button onclick="addRow()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded mt-5">Tambah
+                Identifikasi</button>
+        </section>
+
+        <script>
+            function addRow() {
+                let table = document.getElementById("hazardTable").getElementsByTagName('tbody')[0];
+                let newRow = table.insertRow();
+                let columns = document.getElementById("hazardTable").rows[0].cells.length;
+
+                for (let i = 0; i < columns - 1; i++) {
+                    let cell = newRow.insertCell();
+                    cell.innerHTML = '<input type="text" class="w-full">';
+                }
+                let actionCell = newRow.insertCell();
+                actionCell.classList.add("border", "px-4", "py-2", "text-center");
+                actionCell.innerHTML = '<button onclick="removeRow(this)" class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>';
+            }
+
+            function removeRow(button) {
+                let row = button.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+            }
+        </script>
+
+
+    </div>
+
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-5xl mx-auto">
+        <!-- E. Pengawasan -->
+        <div class="border-b pb-4 mb-4">
+            <h2 class="text-lg font-semibold mb-2">E. Pengawasan oleh PT. Toyota Motor Manufacturing Indonesia</h2>
+            <table class="w-full border-collapse border border-gray-300 text-sm">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="border border-gray-300 p-2">No</th>
+                        <th class="border border-gray-300 p-2">User / Safety Officer Divisi</th>
+                        <th class="border border-gray-300 p-2">No. Reg.</th>
+                        <th class="border border-gray-300 p-2">No. Handphone</th>
+                        <th class="border border-gray-300 p-2">Departemen / Seksi</th>
+                        <th class="border border-gray-300 p-2">No. Anzen Leader</th>
+                        <th class="border border-gray-300 p-2">Paraf</th>
+                        <th class="border border-gray-300 p-2">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="pengawasTableBody">
+                    <tr>
+                        <td class="border border-gray-300 p-2">1</td>
+                        <td class="border border-gray-300 p-2"><input type="text"
+                                class="w-full border-gray-300 rounded-lg p-2"></td>
+                        <td class="border border-gray-300 p-2"><input type="text"
+                                class="w-full border-gray-300 rounded-lg p-2"></td>
+                        <td class="border border-gray-300 p-2"><input type="text"
+                                class="w-full border-gray-300 rounded-lg p-2"></td>
+                        <td class="border border-gray-300 p-2"><input type="text"
+                                class="w-full border-gray-300 rounded-lg p-2"></td>
+                        <td class="border border-gray-300 p-2"><input type="text"
+                                class="w-full border-gray-300 rounded-lg p-2"></td>
+                        <td class="border border-gray-300 p-2"><input type="text"
+                                class="w-full border-gray-300 rounded-lg p-2"></td>
+                        <td class="border px-4 py-2 text-center">
+                            <button onclick="removeRow(this)"
+                                class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="addRow()" class="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Tambah
+                Pengawas</button>
+        </div>
+        <!-- E. Pengawasan -->
+
+        <script>
+            let rowCount = 1; // Initialize row count to 1 since the first row already exists
+
+            function addRow() {
+                rowCount++; // Increment row count for new row
+
+                // Create a new row
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+            <td class="border border-gray-300 p-2">${rowCount}</td>
+            <td class="border border-gray-300 p-2"><input type="text" class="w-full border-gray-300 rounded-lg p-2"></td>
+            <td class="border border-gray-300 p-2"><input type="text" class="w-full border-gray-300 rounded-lg p-2"></td>
+            <td class="border border-gray-300 p-2"><input type="text" class="w-full border-gray-300 rounded-lg p-2"></td>
+            <td class="border border-gray-300 p-2"><input type="text" class="w-full border-gray-300 rounded-lg p-2"></td>
+            <td class="border border-gray-300 p-2"><input type="text" class="w-full border-gray-300 rounded-lg p-2"></td>
+            <td class="border border-gray-300 p-2"><input type="text" class="w-full border-gray-300 rounded-lg p-2"></td>
+            <td class="border px-4 py-2 text-center">
+                <button onclick="removeRow(this)" class="bg-red-500 text-white px-2 py-1 rounded">Hapus</button>
+            </td>
+        `;
+
+                // Append the new row to the table body
+                document.getElementById('pengawasTableBody').appendChild(newRow);
+            }
+
+            function removeRow(button) {
+                const row = button.closest('tr');
+                row.remove();
+
+                // Re-number rows
+                let rows = document.querySelectorAll('#pengawasTableBody tr');
+                rows.forEach((row, index) => {
+                    row.cells[0].textContent = index + 1;
+                });
+            }
+        </script>
+
+
+
+        <!-- F. Disetujui Oleh -->
+        <div class="border-b pb-4 mb-4">
+            <h2 class="text-lg font-semibold mb-2">F. Disetujui Oleh</h2>
+            <table class="w-full border-collapse border border-gray-300 text-sm">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="border border-gray-300 p-2">Direktur / Divisi</th>
+                        <th class="border border-gray-300 p-2">P2K3 Comm & Environment</th>
+                        <th class="border border-gray-300 p-2">PIC Area</th>
+                        <th class="border border-gray-300 p-2">User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-300 p-2">
+                            <label class="block text-sm font-medium">Manager</label>
+                            <input type="text" placeholder="Nama" class="w-full border-gray-300 rounded-lg p-2 mb-2">
+                            <input type="text" placeholder="No. HP" class="w-full border-gray-300 rounded-lg p-2 mb-2">
+                            <input type="text" placeholder="Paraf" class="w-full border-gray-300 rounded-lg p-2">
+                        </td>
+                        <td class="border border-gray-300 p-2">
+                            <label class="block text-sm font-medium">Staff</label>
+                            <input type="text" placeholder="Safety" class="w-full border-gray-300 rounded-lg p-2 mb-2">
+                            <input type="text" placeholder="Environment"
+                                class="w-full border-gray-300 rounded-lg p-2 mb-2">
+                        </td>
+                        <td class="border border-gray-300 p-2">
+                            <label class="block text-sm font-medium">SO / Sec. Head Safety</label>
+                            <input type="text" placeholder="Nama" class="w-full border-gray-300 rounded-lg p-2 mb-2">
+                            <input type="text" placeholder="No. HP" class="w-full border-gray-300 rounded-lg p-2 mb-2">
+                            <input type="text" placeholder="Paraf" class="w-full border-gray-300 rounded-lg p-2">
+                        </td>
+                        <td class="border border-gray-300 p-2">
+                            <label class="block text-sm font-medium">Manager / Safety</label>
+                            <input type="text" placeholder="Nama" class="w-full border-gray-300 rounded-lg p-2 mb-2">
+                            <input type="text" placeholder="No. HP" class="w-full border-gray-300 rounded-lg p-2 mb-2">
+                            <input type="text" placeholder="Paraf" class="w-full border-gray-300 rounded-lg p-2">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Catatan -->
+        <div class="text-sm text-gray-600 mt-4">
+            <p>Note:</p>
+            <ul class="list-disc pl-5">
+                <li>Khusus Daerah Berbahaya - 1 / Rawan Kebakaran harus disetujui Direktur</li>
+                <li>Mohon untuk melampirkan:
+                    <ul class="list-decimal pl-5">
+                        <li>Struktur Organisasi (new Kontraktor List)</li>
+                        <li>Master Skedule pekerjaan</li>
+                        <li>Detail Aktivitas Kontraktor</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="mt-2">Distribusi: a. Pelaksana / Vendor (Putih), b. Security (Merah), c. Departemen / User
+                bersangkutan (Kuning), d. P2K3 Comittee / Safety (Biru)</p>
+        </div>
+    </div>
+
+    <div class="text-center mt-8 space-x-4 py-4 px-6 flex justify-center items-center">
+        <!-- Tombol Kembali -->
+        <a href="page-maker.html"
+            class="bg-blue-500 text-white py-2 px-6 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">
+            Kembali
+        </a>
+        <!-- Tombol Next -->
+        <a href="form-detail-aktivitas.html"
+            class="bg-green-500 text-white py-2 px-6 rounded-lg font-semibold hover:bg-green-600 transition duration-300">
+            Next
+        </a>
+    </div>
+
+</body>
+
+</html>
