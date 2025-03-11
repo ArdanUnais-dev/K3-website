@@ -5,20 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berhasil</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-bg {
+            background: linear-gradient(-45deg, #97ff87, #53f034, #09d19f, #009dff);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+    </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="bg-white p-10 rounded-2xl shadow-lg text-center">
-        <div class="flex items-center justify-center w-20 h-20 bg-green-100 text-green-600 rounded-full mx-auto">
+<body class="flex items-center justify-center min-h-screen animated-bg">
+    <div x-data="{ show: false }" x-init="setTimeout(() => show = true, 500)" 
+         x-show="show" x-transition.duration.500ms 
+         class="bg-white p-10 rounded-2xl shadow-lg text-center scale-90 opacity-0"
+         x-bind:class="show ? 'scale-100 opacity-100' : ''">
+        
+        <div class="flex items-center justify-center w-20 h-20 bg-green-100 text-green-600 rounded-full mx-auto animate-bounce">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-10 h-10">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
             </svg>
         </div>
+        
         <h2 class="text-2xl font-semibold text-gray-800 mt-4">Sukses!</h2>
         <p class="text-gray-600 mt-2">Terima Kasih Sudah Mengisi SIK</p>
-        <br>
-        <br>
-        <p class="text-gray-600 mt-10 text-xl">"Jika Ingin Melihat Hazard Map"</p>
-        <a href="folder-halaman/default.html" class="mt-4 inline-block px-6 py-2 text-white bg-green-600 rounded-lg hover:bg-green-700 font-semibold">Hazard Map</a>
+        
+        <p class="text-gray-600 mt-10 text-xl italic">"Jika Ingin Melihat Hazard Map"</p>
+        <a href="folder-halaman/default.html" 
+           class="mt-4 inline-block px-6 py-2 text-white bg-green-600 rounded-lg hover:bg-green-700 transition-transform transform hover:scale-110 font-semibold shadow-md">
+            Hazard Map
+        </a>
     </div>
 </body>
 </html>

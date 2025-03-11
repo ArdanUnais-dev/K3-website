@@ -213,44 +213,60 @@
         </tbody>
       </table>
 
-      <script>
-        function previewImage(event, input) {
-          let imagePreview = input.nextElementSibling;
-          imagePreview.innerHTML = ''; // Kosongkan preview sebelumnya
-          let file = event.target.files[0];
-
-          if (file) {
-            let reader = new FileReader();
-            reader.onload = function (e) {
-              let img = document.createElement('img');
-              img.src = e.target.result;
-              img.classList.add('w-32', 'h-auto', 'border', 'border-gray-400', 'rounded', 'shadow');
-              imagePreview.appendChild(img);
-            }
-            reader.readAsDataURL(file);
-          }
-        }
-
-        function addProcedureRow() {
-          let table = document.getElementById("procedureTable");
-          let rowNumber = table.rows.length + 1; // Nomor otomatis
-          let row = document.createElement("tr");
-
-          row.innerHTML = `
-        <td class="border border-gray-400 px-2 py-1 text-center">${rowNumber}</td>
-        <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Prosedur Kerja" class="w-full p-1"></td>
-        <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Point Penting" class="w-full p-1"></td>
-        <td class="border border-gray-400 px-2 py-1 text-center">
-          <input type="file" accept="image/*" onchange="previewImage(event, this)" class="w-full">
-          <div class="imagePreview mt-2"></div>
-        </td>
-      `;
-          table.appendChild(row);
-        }
-      </script>
-
       <button onclick="addProcedureRow()" class="bg-green-600 text-white px-3 py-2 rounded">Tambah Baris</button>
     </div>
+
+    <!-- Modal untuk menampilkan gambar -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden"
+      onclick="closeModal()">
+      <img id="modalImage" class="max-w-full max-h-full" />
+    </div>
+
+    <script>
+      function previewImage(event, input) {
+        let imagePreview = input.nextElementSibling;
+        imagePreview.innerHTML = ''; // Kosongkan preview sebelumnya
+        let file = event.target.files[0];
+
+        if (file) {
+          let reader = new FileReader();
+          reader.onload = function (e) {
+            let img = document.createElement('img');
+            img.src = e.target.result;
+            img.classList.add('w-32', 'h-auto', 'border', 'border-gray-400', 'rounded', 'shadow', 'cursor-pointer');
+            img.onclick = function () { openModal(e.target.result); };
+            imagePreview.appendChild(img);
+          }
+          reader.readAsDataURL(file);
+        }
+      }
+
+      function addProcedureRow() {
+        let table = document.getElementById("procedureTable");
+        let rowNumber = table.rows.length + 1;
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+      <td class="border border-gray-400 px-2 py-1 text-center">${rowNumber}</td>
+      <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Prosedur Kerja" class="w-full p-1"></td>
+      <td class="border border-gray-400 px-2 py-1"><input type="text" placeholder="Point Penting" class="w-full p-1"></td>
+      <td class="border border-gray-400 px-2 py-1 text-center">
+        <input type="file" accept="image/*" onchange="previewImage(event, this)" class="w-full">
+        <div class="imagePreview mt-2"></div>
+      </td>
+    `;
+        table.appendChild(row);
+      }
+
+      function openModal(src) {
+        document.getElementById("modalImage").src = src;
+        document.getElementById("imageModal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("imageModal").classList.add("hidden");
+      }
+    </script>
 
 
     <h3 class="text-lg font-bold mt-20">SITUASI BERBAHAYA</h3>
