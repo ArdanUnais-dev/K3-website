@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Mapping Vehicle Plant</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 text-center flex flex-col items-center min-h-screen">
     <div class="bg-orange-500 text-white p-4 text-2xl font-bold w-full text-center">Halaman 1 - Terjepit Mesin</div>
-    
+
+    <!-- Button Menu -->
     <div class="flex flex-wrap justify-center my-6 gap-2 w-full max-w-2xl p-6">
-        <a href="hal-1.html" class="bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">A: Terjepit Mesin</a>
-        <a href="hal-2.html" class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">B: Benda Berat</a>
-        <a href="hal-3.html" class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">C: Tertabrak Kendaraan</a>
-        <a href="hal-4.html" class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">D: Jatuh dari Ketinggian</a>
-        <a href="hal-5.htmlnn" class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">E: Tersengat Listrik</a>
-        <a href="hal-6.html" class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">F: Terbakar</a>
-        <a href="O.pdf" class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">O: Lainnya</a>
+        <a href="hal-1.html" class="bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">A:
+            Terjepit Mesin</a>
+        <a href="hal-2.html"
+            class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">B:
+            Benda Berat</a>
+        <a href="hal-3.html"
+            class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">C:
+            Tertabrak Kendaraan</a>
+        <a href="hal-4.html"
+            class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">D:
+            Jatuh dari Ketinggian</a>
+        <a href="hal-5.htmlnn"
+            class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">E:
+            Tersengat Listrik</a>
+        <a href="hal-6.html"
+            class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">F:
+            Terbakar</a>
+        <a href="O.pdf"
+            class="bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto text-center">O:
+            Lainnya</a>
     </div>
-    
-     <!-- Image Hazard Map -->
-     <div class="flex justify-center mt-6 px-4">
-        <img id="hazardImg" src="images-hazard-map/terjepit-mesin.jpg" alt="Peta Aktivitas" class="max-w-full h-auto border rounded-lg shadow-lg cursor-pointer w-3/4 md:w-1/2 lg:w-1/3">
+    <!-- Button Menu -->
+
+    <!-- Image Hazard Map -->
+    <div class="flex justify-center mt-6 px-4">
+        <img id="hazardImg" src="images-hazard-map/terjepit-mesin.jpg" alt="Peta Aktivitas"
+            class="max-w-full h-auto border rounded-lg shadow-lg cursor-pointer w-3/4 md:w-1/2 lg:w-1/3">
     </div>
+    <!-- Image Hazard Map -->
 
     <!-- Modal -->
     <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center p-4">
         <div class="relative">
             <img id="modalImg" src="" class="max-w-full max-h-[90vh] border-4 border-white rounded-lg">
-            <button id="closeModal" class="absolute top-2 right-2 bg-red-500 text-white text-xl px-3 py-1 rounded-full">X</button>
+            <button id="closeModal"
+                class="absolute top-2 right-2 bg-red-500 text-white text-xl px-3 py-1 rounded-full">X</button>
         </div>
     </div>
-    
+    <!-- Modal -->
+
     <!-- Tombol Kembali -->
     <div class="mt-6">
-        <a href="/index.html" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Kembali</a>
+        <a href="../../../index.html" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Kembali</a>
     </div>
+    <!-- Tombol Kembali -->
 
     <!-- JavaScript untuk modal -->
     <script>
@@ -59,5 +81,8 @@
             }
         });
     </script>
+    <!-- Javascript Untuk Modal -->
+
 </body>
+
 </html>
